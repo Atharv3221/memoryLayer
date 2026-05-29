@@ -29,15 +29,8 @@ public class MemoryController {
 
     @GetMapping("/session/{id}")
     public SessionData getSessionData(@PathVariable long id) {
-        SessionData sessionData = new SessionData();
-        sessionData.
-                setSessionMemoryBlocks(memoryService.
-                        getSessionMemory(id)
-                );
-        sessionData.setMemoryBlock(
-                memoryService.getMemoryBlocks(id)
-        );
-        return  sessionData;
+        return new SessionData(memoryService.
+                getSessionMemory(id), memoryService.getMemoryBlocks(id));
     }
 
     @DeleteMapping("/session/{id}")

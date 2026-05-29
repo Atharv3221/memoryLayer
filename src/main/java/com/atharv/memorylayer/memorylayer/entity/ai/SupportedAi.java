@@ -1,5 +1,8 @@
 package com.atharv.memorylayer.memorylayer.entity.ai;
 
+/**
+ * Represents supported Ai providers.
+ */
 public enum SupportedAi {
     OPENAI("https://api.openai.com/v1/models"),
     ANTHROPIC("https://api.anthropic.com/v1/models"),

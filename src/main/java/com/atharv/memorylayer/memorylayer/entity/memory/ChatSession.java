@@ -11,6 +11,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import org.springframework.data.annotation.CreatedBy;
 
+/**
+ * Represents a session.
+ */
 @Entity
 public class ChatSession {
 

@@ -8,6 +8,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+/**
+ * Used to represent session history
+ */
 @Entity
 public class SessionMemoryBlock {
 
@@ -25,6 +28,14 @@ public class SessionMemoryBlock {
 
     public Long getId() {
         return id;
+    }
+
+    public EntryType getEntryType() {
+        return entryType;
+    }
+
+    public void setEntryType(EntryType entryType) {
+        this.entryType = entryType;
     }
 
     public String getContent() {
