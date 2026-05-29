@@ -7,6 +7,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+/**
+ * Represents persistent memory block for a Session.
+ * A session can have multiple memory blocks.
+ */
 @Entity
 public class MemoryBlock {
 

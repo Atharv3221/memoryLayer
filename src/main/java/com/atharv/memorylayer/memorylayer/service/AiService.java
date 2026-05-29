@@ -29,7 +29,7 @@ public class AiService {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    public List<String> getSupportedModelsOpenAI() {
+    public List<String> getSupportedAiModel(SupportedAi supportedAi) {
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "Bearer " + openAiApiKey);
 
