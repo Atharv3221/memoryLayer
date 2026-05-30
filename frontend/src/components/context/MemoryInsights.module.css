@@ -1,0 +1,173 @@
+.wrap { padding: 16px; }
+
+/* top row */
+.topRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.healthCard {
+  flex: 1;
+  background: var(--s1);
+  border: 1px solid var(--b1);
+  border-radius: var(--r);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ring {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.ringNum {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--t1);
+}
+
+.healthInfo {}
+
+.healthTitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--t1);
+  margin-bottom: 2px;
+}
+
+.healthSub {
+  font-size: 10px;
+  color: var(--t3);
+}
+
+.syncCard {
+  background: var(--s1);
+  border: 1px solid var(--b1);
+  border-radius: var(--r);
+  padding: 12px;
+  min-width: 130px;
+}
+
+.syncStatus {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #3d8b5c;
+  margin-bottom: 4px;
+}
+
+.syncDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #3d8b5c;
+}
+
+.syncSub {
+  font-size: 10px;
+  color: var(--t3);
+  margin-bottom: 7px;
+}
+
+.syncBar {
+  height: 2px;
+  background: var(--s3);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.syncFill {
+  width: 40%;
+  height: 100%;
+  background: var(--ac);
+  border-radius: 1px;
+}
+
+/* stats grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+/* checklist */
+.checkTitle {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--t2);
+  margin-bottom: 8px;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--s1);
+  border: 1px solid var(--b1);
+  border-radius: 6px;
+  padding: 9px 11px;
+  transition: border-color 0.12s;
+  cursor: pointer;
+}
+
+.checkItem:hover { border-color: var(--b2); }
+
+.checkIcon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(61, 139, 92, 0.12);
+  border: 1px solid rgba(61, 139, 92, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: #3d8b5c;
+  flex-shrink: 0;
+}
+
+.checkBody { flex: 1; min-width: 0; }
+
+.checkLabel {
+  font-size: 12px;
+  color: var(--t1);
+}
+
+.checkSub {
+  font-size: 10px;
+  color: var(--t3);
+}
+
+.checkCount {
+  font-size: 10px;
+  color: var(--t3);
+  background: var(--s2);
+  border: 1px solid var(--b1);
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+.trend {
+  font-size: 10px;
+  font-weight: 500;
+  color: #3d8b5c;
+}

@@ -1,70 +1,80 @@
-# Getting Started with Create React App changes
+# ContextAI — Minimal AI Context Management Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A clean, dark-theme React + TypeScript frontend for managing AI context across multiple providers.
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+- React 18
+- TypeScript 5
+- Vite 5
+- CSS Modules (zero external UI deps)
 
-### `npm start`
+## Quick start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+npm run dev
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Open http://localhost:5173
 
-### `npm test`
+## Project structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── components/
+│   ├── layout/
+│   │   ├── MainLayout.tsx      # Root layout — sidebar + topbar + view routing
+│   │   ├── Sidebar.tsx         # Collapsible left nav
+│   │   └── Topbar.tsx          # Breadcrumb + status bar
+│   │
+│   ├── hero/
+│   │   └── HeroSection.tsx     # Landing hero + project grid
+│   │
+│   ├── chat/
+│   │   ├── ChatComposer.tsx    # Floating input with provider/model selectors
+│   │   ├── ChatMessage.tsx     # Single message bubble
+│   │   ├── ChatWindow.tsx      # Scrollable message list + typing indicator
+│   │   ├── ProviderSelector.tsx
+│   │   └── ModelSelector.tsx
+│   │
+│   ├── context/
+│   │   ├── ContextTimeline.tsx # Filterable event timeline
+│   │   ├── MemoryCard.tsx      # Single stat card
+│   │   └── MemoryInsights.tsx  # Full memory panel
+│   │
+│   └── projects/
+│       └── ProjectCard.tsx     # Project summary card
+│
+├── data/index.ts               # All mock data
+├── hooks/useAppState.ts        # Central app state
+├── types/index.ts              # TypeScript interfaces
+├── App.tsx
+├── main.tsx
+└── index.css                   # CSS custom properties (design tokens)
+```
 
-### `npm run build`
+## Design tokens (index.css)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Token  | Value                       | Usage        |
+|--------|-----------------------------|--------------|
+| --bg   | #0c0c0c                     | Page bg      |
+| --s1   | #111111                     | Sidebar, topbar |
+| --s2   | #161616                     | Cards, inputs |
+| --s3   | #1c1c1c                     | Bars, avatars |
+| --b1   | rgba(255,255,255,0.07)      | Default border |
+| --b2   | rgba(255,255,255,0.11)      | Hover border  |
+| --t1   | #f0f0f0                     | Primary text  |
+| --t2   | #888888                     | Secondary text |
+| --t3   | #555555                     | Muted text    |
+| --ac   | #e07b3a                     | Accent (orange) |
+| --ac2  | rgba(224,123,58,0.12)       | Accent bg tint |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Providers supported
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Anthropic (Claude Sonnet 4.5, Opus 4, Haiku 4)
+- OpenAI (GPT-5, GPT-5 Mini, GPT-4.1)
+- Google (Gemini 2.5 Pro/Flash/Flash Lite)
+- DeepSeek (V3, R1)
+- Groq (Llama 4 Maverick, Scout)
+- Mistral (Large, Mixtral 8x22B)
